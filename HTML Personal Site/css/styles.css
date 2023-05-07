@@ -1,0 +1,18 @@
+body {
+  background-color: #CDFCF6;
+}
+
+hr {
+  width: 8%;
+  border-style: none;
+  border-top: 5px dotted #F5EFE6;
+}
+
+h3 {
+  color:#66BFBF;
+}
+
+.name {
+  color: #3C4048;
+  font-family: "Arial" , sans-serif;
+}

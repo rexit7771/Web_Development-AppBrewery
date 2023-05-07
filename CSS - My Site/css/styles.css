@@ -1,0 +1,78 @@
+
+body{
+  font-family: 'Old Standard TT', serif;
+  margin: 0;
+  text-align: center;
+  font-size: 110%
+}
+
+.top-container{
+  margin: 0px;
+  height: 700px;
+  padding-top: 100px;
+  text-align: center;
+  background-color: #A5F1E9;
+}
+
+h1{
+  margin: 0 auto;
+  width: 500px;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 3rem;
+  color: #66BFBF;
+  line-height: 2;
+}
+
+h2{
+  color: #66BFBF;
+  font-weight: normal;
+}
+
+h3{
+  color: #11999E;
+}
+
+a{
+  color: #11999E;
+}
+
+.amateur{
+  text-decoration: underline;
+}
+
+.top-cloud{
+  position: absolute;
+  right: 500px;
+}
+
+.bot-cloud{
+  position: absolute;
+}
+
+.fotoprofil{
+  height: 200px;
+  padding-top: 50px;
+}
+
+.Coding{
+  float: left;
+  margin-right: 30px;
+  width: 25%;  
+}
+
+.Swimming{
+  width: 25%;
+  float: right;
+  margin-left: 30px;
+  height: 200px;
+}
+
+.skill-row{
+  width: 50%;
+  margin: 100px auto;
+  text-align: left;
+}
+
+p{
+  line-height: 2;
+}
