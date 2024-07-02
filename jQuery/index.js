@@ -1,6 +1,4 @@
-
-$("input").keypress(function(event) {
-    console.log(event.key);
-    $("h1").text(event.key);
+$("input").keypress(function (event) {
+    key_pressed = event.key;
+    $("h1").text(key_pressed);
 })
-

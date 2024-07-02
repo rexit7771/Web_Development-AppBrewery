@@ -1,110 +1,61 @@
-
-
-for(var i = 0; i < document.querySelectorAll(".drum").length; i++){
-
-document.querySelectorAll(".drum")[i].addEventListener("click", function(){
-    
-    var buttonInnerHTML = this.innerHTML;
-
-    buttonAnimation(buttonInnerHTML);
-
-    switch (buttonInnerHTML) {
-        case "w":
-            var tom1 = new Audio("sounds/tom-1.mp3");
-            tom1.play();
-            break;
-        
-        case "a":
-            var tom2 = new Audio("sounds/tom-2.mp3");
-            tom2.play();
-            break;
-        
-        case "s":
-            var tom3 = new Audio("sounds/tom-3.mp3");
-            tom3.play();
-            break;
-
-        case "d":
-            var tom4 = new Audio("sounds/tom-4.mp3");
-            tom4.play();
-            break;
-
-        case "j":
-            var snare = new Audio("sounds/snare.mp3");
-            snare.play();
-            break;
-
-        case "k":
-            var crash = new Audio("sounds/crash.mp3");
-            crash.play();
-            break;
-
-        case "l":
-            var kick = new Audio("sounds/kick-bass.mp3");
-            kick.play();
-            break;
-    
-        default: console.log(buttonInnerHTML);
-            break;
+var total_drum = document.querySelectorAll(".drum").length;
+for (let index = 0; index < total_drum; index++) {
+    // *Jika button di klik
+    document.querySelectorAll(".drum")[index].addEventListener("click", function () {
+        // *Untuk mendeteksi innerhtml yang diklik nya
+        var buttonInnerHTML = this.innerHTML;
+        //* Memanggil function yang memainkan suara dengan parameter buttonInnerHTML
+        play_audio(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
     }
+    );
+}
 
-})};
+// *Jika keyboard yang sesuai ditekan
+    document.addEventListener("keypress", function (event) {
+        var key_press = event.key;
+        //* Memanggil function yang memainkan suara dengan parameter key_press
+        play_audio(key_press);
+        buttonAnimation(key_press);
+    });
 
-document.addEventListener("keydown", function(event) {
-    
-    var key = event.key;
+function play_audio(input) {
+    switch (input) {
+            case "w":
+                var drum_audio = new Audio("sounds/tom-1.mp3");
+                drum_audio.play();
+                break;
+            case "a":
+                var drum_audio = new Audio("sounds/tom-2.mp3");
+                drum_audio.play();
+                break;
+            case "s":
+                var drum_audio = new Audio("sounds/tom-3.mp3");
+                drum_audio.play();
+                break;
+            case "d":
+                var drum_audio = new Audio("sounds/tom-4.mp3");
+                drum_audio.play();
+                break;
+            case "j":
+                var drum_audio = new Audio("sounds/snare.mp3");
+                drum_audio.play();
+                break;
+            case "k":
+                var drum_audio = new Audio("sounds/crash.mp3");
+                drum_audio.play();
+                break;
+            case "l":
+                var drum_audio = new Audio("sounds/kick-bass.mp3");
+                drum_audio.play();
+                break;
+        }
+}
 
-    buttonAnimation(key);
-
-    switch (key) {
-        case "w":
-            var tom1 = new Audio("sounds/tom-1.mp3");
-            tom1.play();
-            break;
-        
-        case "a":
-            var tom2 = new Audio("sounds/tom-2.mp3");
-            tom2.play();
-            break;
-        
-        case "s":
-            var tom3 = new Audio("sounds/tom-3.mp3");
-            tom3.play();
-            break;
-
-        case "d":
-            var tom4 = new Audio("sounds/tom-4.mp3");
-            tom4.play();
-            break;
-
-        case "j":
-            var snare = new Audio("sounds/snare.mp3");
-            snare.play();
-            break;
-
-        case "k":
-            var crash = new Audio("sounds/crash.mp3");
-            crash.play();
-            break;
-
-        case "l":
-            var kick = new Audio("sounds/kick-bass.mp3");
-            kick.play();
-            break;
-    
-        default: console.log(buttonInnerHTML);
-            break;
-    }
-})
-
-function buttonAnimation(currentKey) {
-    
-    var activeButton = document.querySelector("." + currentKey);
-    activeButton.classList.add("pressed");
-
-    setTimeout(function(){
-        activeButton.classList.remove("pressed");
+function buttonAnimation(currentKey) { 
+    var activateButton = document.querySelector("."+currentKey);
+    activateButton.classList.add("pressed");
+    setTimeout(() => {
+        activateButton.classList.remove("pressed");
     }, 100);
 }
-// var playSound = new Audio("sounds/tom-1.mp3");
-    // playSound.play();
