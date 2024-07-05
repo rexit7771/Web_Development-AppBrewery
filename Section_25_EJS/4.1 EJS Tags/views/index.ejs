@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EJS Tags</title>
+</head>
+
+<body>
+  <h1>
+    EJS Tags
+  </h1>
+  <% if (data.seconds % 2===0) { %>
+    <p>Current second: <%=data.seconds%>
+    </p>
+    <ul>
+      <% for( let index=0; index < data.items.length; index++ ) { %>
+        <li>
+          <%= data.items[index] %>
+        </li>
+        <% } %>
+    </ul>
+    <% } else { %>
+      <p>Current second: <%=data.seconds%>
+      </p>
+      <p>No items to display</p>
+      <%}%>
+        <p>
+          <em>This is some em text</em>
+        </p>
+
+        <!-- Footer goes here -->
+        <%- include("footer.ejs") %>
+</body>
+
+</html>
